@@ -1,29 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import {DEFAULT_CONFIG, NgForageOptions, NgForageConfig, Driver} from 'ngforage';
+import {RouterModule} from '@angular/router';
+import {allAppRoutes} from './routes';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WeatherComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    RouterModule.forRoot(allAppRoutes)
   ],
-  providers: [
-    // One way of configuring ngForage
-    {
-      provide: DEFAULT_CONFIG,
-      useValue: {
-        name: 'MyApp',
-        driver: [ // defaults to indexedDB -> webSQL -> localStorage
-          Driver.INDEXED_DB,
-          Driver.LOCAL_STORAGE
-        ]
-      } as NgForageOptions
-    }
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
