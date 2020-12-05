@@ -8,7 +8,7 @@ import {NgForage} from 'ngforage';
 })
 export class AppComponent  implements OnInit{
   title = 'OefeningNgForge';
-
+  
   constructor(private readonly ngf: NgForage) {
  }
 
@@ -18,6 +18,4 @@ public async ngOnInit() {
       let getal = this.ngf.getItem<Number>('getal')
       this.title = "getal is ${'getal'}";
     }
-  
-  
 }
