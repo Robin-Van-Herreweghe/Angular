@@ -8,11 +8,13 @@ import { WeatherComponent } from './weather/weather.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StorageServiceModule } from "ngx-webstorage-service";
 import {DEFAULT_CONFIG, NgForageOptions, NgForageConfig, Driver} from 'ngforage';
+import { LastComponent } from './last/last.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WeatherComponent
+    WeatherComponent,
+    LastComponent
   ],
   imports: [
     StorageServiceModule,
