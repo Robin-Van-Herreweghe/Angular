@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { StorageServiceModule } from "ngx-webstorage-service";
 import {DEFAULT_CONFIG, NgForageOptions, NgForageConfig, Driver} from 'ngforage';
 import { LastComponent } from './last/last.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { LastComponent } from './last/last.component';
     AppRoutingModule,
     RouterModule.forRoot(allAppRoutes),
     HttpClientModule,
+    ServiceWorkerModule.register('./ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [
     {
