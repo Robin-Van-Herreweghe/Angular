@@ -13,9 +13,6 @@ export class AppComponent  implements OnInit{
  }
 
 public async ngOnInit() {
-      //this.ngf.setItem<Number>('getal',5);
-      //this.ngf.name = 'SomeStore';
-      let getal = this.ngf.getItem<Number>('getal')
-      this.title = "getal is ${'getal'}";
+
     }
 }
